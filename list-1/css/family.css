@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(http://fonts.gstatic.com/s/hind/v5/0IXD51eZ8qgi73bhvRidlQ.woff2) format('woff2'), url(http://fonts.gstatic.com/s/hind/v5/R5nyNcvoz7n0iBHxjY_LyQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Hind Regular'), local('Hind-Regular'), url(http://fonts.gstatic.com/s/hind/v5/xLdg5JI0N_C2fvyu9XVzXg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/hind/v5/mjitrc9VnL7D7tS-i3g3XQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(http://fonts.gstatic.com/s/hind/v5/_JiDQLq4JWzs7prWhNNmuA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/hind/v5/yATwQM0pIZXIFPrEDZyOHg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Hind Semibold'), local('Hind-Semibold'), url(http://fonts.gstatic.com/s/hind/v5/A2xpLU2z2kq5byuh5bkohg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/hind/v5/2dBELi3ZbivnVPt1KR2lhQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Hind Bold'), local('Hind-Bold'), url(http://fonts.gstatic.com/s/hind/v5/PQuIEfcr_wdF_zOSNjqWKQ.woff2) format('woff2'), url(http://fonts.gstatic.com/s/hind/v5/lyIZFqDTaXXyAxN6-svvJg.woff) format('woff');
+}
