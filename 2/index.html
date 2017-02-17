@@ -1,922 +1,555 @@
-<!DOCTYPE html>
-<html>
-
-<!-- Head -->
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
+<!-- Basic Page Needs
+================================================== -->
 <title>Home</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
 
-<!-- Meta-Tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="keywords" content="">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //Meta-Tags -->
+<!-- Mobile Specific Metas 
+================================================== -->
+<meta content="width=device-width,initial-scale=1" name="viewport">
 
-<!-- Custom-Stylesheet-Links -->
-<!-- Bootstrap-CSS -->  <link rel="stylesheet" href="css/bootstrap.min.css" 		 type="text/css" media="all">
-<!-- Insex-Page.CSS --> <link rel="stylesheet" href="css/style.css" 				 type="text/css" media="all">
-<!-- Slider-CSS --> 	<link rel="stylesheet" href="css/camera.css" id="camera-css" type="text/css" media="all">
-<!-- Portfolio-CSS -->	<link rel="stylesheet" href="css/swipebox.css"				 type="text/css" media="all">
-<!-- //Custom-Stylesheet-Links -->
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-<!-- Fonts -->
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"	   type="text/css" media="all">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700"			   type="text/css" media="all">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" type="text/css" media="all">
-<!-- //Fonts -->
+<!--fonts
+====================================================-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cOswald:400,700" rel="stylesheet">
+<!--stylesheets
+====================================================-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">  
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/simpletextrotator.css"> 
 
-<!-- Supportive-JavaScript -->
-<script src="js/modernizr.js"></script>
-<!-- //Supportive-JavaScript -->
-
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+<script src="js/jquery.min.js"></script> <!-- JQUERY -->
 </head>
-<!-- //Head -->
+<body>
 
+<!--FRONT PAGE/ SPLASH SCREEN SECTION-->
 
+<div class="loading-screen"></div>
 
-<!-- Body -->
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div id="frontpage"> 
+	<div class="shadow-img"></div> 
+	<img src="images/front-image.jpg" class="front-img img-responsive" alt ="Front-image"><!--IMAGE FOR FRONT SCREEN-->
+	<h1>John <span class="invert">Doe</span></h1><!--PROFILE NAME-->
+	<h3 class="invert" style="margin-top: -10px; margin-bottom: 10px;">Web <span class="rotate">Developer, Designer, Artist</span></h3> <!--SUBTITLE IN PROFILE-->
+	<div class="frontclick"><img src="images/click.png" alt="" class="img-responsive"><span class="pulse"></span></div>
+</div>
+<!--FRONT PAGE/ SPLASH SCREEN SECTION ENDS-->
+<!--container-->
+<div class="container">
+	<div id="content" class="row hidden">
+		<div class="col-sm-4">
+			<!--namecard-->
+			<div id="namecard" class="namecard">
+				<div class="shadow-img"></div>
+				<h1 class="maintitle">John <span class="invert">Doe</span></h1><!--PROFILE NAME-->
+				<h3 class="invert sub-maintitle">Web 
+					<span class="rotate">Developer, Designer, Artist</span><!--SUBTITLE AFTET NAME-->
+				</h3>
+				<img id="profile-img" class="profile-img transparent" src="images/profile-thum.png" alt="profile-image"><!--PROFILE IMAGE-->
+			</div><!--/#namecard-->
+			<!--menu-->
+			<div id="menu-container">
+				<!--PAGE MENU-->
+				<ul class="nav-menu no-padding">
+					<li class="nav-btn selected" title="Home" data-page="home">
+						<div class="hover-background"></div>
+						<span>Home</span><i class="fa fa-user fa-fw"></i>
+					</li>
+					<li class="nav-btn" id="resume-btn" title="Resume"  data-page="resume">
+						<div class="hover-background"></div>
+						<span>Resume</span><i class="fa fa-file-text fa-fw"></i>
+					</li>
+				   <li class="nav-btn folio-btn" data-filter="*" title="Portfolio" data-page="portfolio">
+						<div class="hover-background"></div>
+						<span>Portfolio</span><i class="fa fa-suitcase fa-fw"></i>
+					</li>
+					<li class="nav-btn" title="Contact" id="contact-link" data-page="contact">
+						<div class="hover-background"></div>
+						<span>Contact</span><i class="fa fa-paper-plane fa-fw"></i>
+					</li>
+				</ul><!--/.nav-menu __PAGE MENU ENDS-->
 
-
-
-	<!-- Header -->
-	<div class="agileheaderw3ls" id="agilehomewthree">
-
-		<!-- Navigation -->
-		<section class="cd-section">
-			<a class="cd-bouncy-nav-trigger" href="#0">MENU</a>
-		</section>
-		<div class="cd-bouncy-nav-modal">
-			<nav>
-				<ul class="cd-bouncy-nav">
-					<li><a class="scroll" href="#agilehomewthree">HOME</a></li>
-					<li><a class="scroll" href="#agileaboutaitsabout">ABOUT</a></li>
-					<li><a class="scroll" href="#w3threespecialityw3ls">WORK</a></li>
-					<li><a class="scroll" href="#skills">SKILLS</a></li>
-					<li><a class="scroll" href="#portfolio">PORTFOLIO</a></li>
-					<li><a class="scroll" href="#contact">CONTACT</a></li>
-				</ul>
-			</nav>
-			<a href="#0" class="cd-close">Close modal</a>
+				<!--SOCIAL NAV MENU-->
+				<div class="social-menu-container">
+					<ul class="social-menu no-padding">                     
+						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+						<li><a href=""><i class="fa fa-youtube"></i></a></li>
+						<li><a href=""><i class="fa fa-pinterest-p"></i></a></li>
+						<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div><!--/.social-menu-container-->
+			</div><!--#menu-container-->
 		</div>
-		<!-- //Navigation -->
-
-		<!-- Slider -->
-		<div class="w3slideraits">
-			<div class="camera_wrap w3layouts agileits camera_magenta_skin" id="camera_wrap_2">
-				<div data-src="images/slide-1.jpg" class="w3layouts agileits">
-					<div class="camera_caption w3layouts agileits fadeFromBottom">
-						<h3 class="w3layouts agileits">Hello, I am Rachel Weisz.</h3>
+		<div class="col-sm-8 page-segment">
+			<ul class="page-container no-padding">
+				<!--HOME/PROFILE PAGE-->
+				<li id="home" class="selected">
+					<div class="title-container hidden">
+						<div class="shadow-img"></div> 
+						<h2 class="rotate-out">Welcome To <span class="invert">My Profile</span></h2><!--HOME TITLE-->                          
 					</div>
-				</div>
-				<div class="w3layouts agileits" data-src="images/slide-2.jpg">
-					<div class="camera_caption w3layouts agileits fadeFromBottom">
-						<h3 class="w3layouts agileits">I am a Photographer</h3>
+					<div class="description hidden">
+						<div class="watermark-home"></div> 
+
+						<div class="fade-text transparent">
+							<!--DESCRIPTION ON HOME-->
+							<div class="strong-text">Hello, I am <span>John Doe</span></div>
+							<div class="focus-text"><span>Web Developer & </span><span>Web Designer</span></div>
+							<p class="large-paragraph">I have ten years experience as a web/interface designer.I have a love of clean, elegant styling. I have lots of experience in the production of CSS and HTML for modern websites.</p>         
+							<!--DESCRIPTION ON HOME ENDS-->
+						</div>
+
+						<!--ALL PERSONAL DETAILS-->
+						<h3 class="personal-info-title title">Personal Info</h3>
+						<ul class="personal-info">
+							<li class="rotate-out rotated"><label>Name</label><span>Anderson smith</span></li>                     
+							<li class="rotate-out rotated"><label>Address</label><span>Melbourne Victoria 3000 Australia</span></li>
+							<li class="rotate-out rotated"><label>Email</label><span>nurealamsabbir@authlab.io</span></li>  
+							<li class="rotate-out rotated"><label>Phone</label><span>+8801979791001</span></li>
+						</ul><!--/ul.personal-info-->
 					</div>
-				</div>
-				<div data-src="images/slide-3.jpg" class="w3layouts agileits">
-					<div class="camera_caption w3layouts agileits fadeFromBottom">
-						<h3 class="w3layouts agileits">I Photograph Models and Nature</h3>
+				</li><!--/#home-->
+
+				<!--RESUME PAGE-->
+				<li id="resume" class="hidden">
+					<div class="title-container">
+						<div class="shadow-img"></div>
+						<h2 class="rotate-out rotated"><span class="invert">Resume Of</span> John Doe</h2> <!--RESUME TITLE-->
 					</div>
-				</div>
-				<div class="w3layouts agileits" data-src="images/slide-4.jpg">
-					<div class="camera_caption w3layouts agileits fadeFromBottom">
-						<h3 class="w3layouts agileits">I Love Photography</h3>
+					<div class="description">
+
+						<div class='tabs tabs_animate'>
+							<!--RESUME TAB LISTS-->
+							<ul class='horizontal no-padding'>
+								<li><a href="#tab-1" class="icon-bg icon-skills"><div>Skills</div></a></li>
+								<li><a href="#tab-2" class="icon-bg icon-education"><div>Educations</div></a></li>
+								<li><a href="#tab-3" class="icon-bg icon-employment"><div>Employment</div></a></li>
+							</ul><!--RESUME TAB LISTS ENDS-->
+
+							<!--RESUME FIRST TAB/SKILL TAB DETAILS-->
+							<div id='tab-1'>
+								<h3 class="title">OUR SKILLS</h3><!--SKILLS WITH BAR DISPLAY-->
+								<ul class="skills-list no-padding">
+									<li class="row">
+										<div class="col-xs-2"><div class="fw-mid">HTML</div></div>
+										<div class="col-xs-9">
+											<div class="bar">
+												<div class="percentage" id="bar1" style="width: 58%;"></div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="col-xs-2"><div class="fw-mid">CSS</div></div>
+										<div class="col-xs-9">
+											<div class="bar">
+												<div class="percentage" id="bar2" style="width: 75%;"></div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="col-xs-2"><div class="fw-mid">Javascript</div></div>
+										<div class="col-xs-9">
+											<div class="bar">
+												<div class="percentage" id="bar3" style="width: 85%;"></div>
+											</div>
+										</div>
+									</li>
+								</ul><!--SKILLS WITH BAR DISPLAY ENDS-->
+
+								<!--SKILLS WITH CIRCLE DISPLAY-->
+								<div class="circle-skill-container">
+									<h3 class="title">OTHER SKILLS</h3>
+									<div class="row">
+										<div class="col-xs-4 center-align">
+											<div class="circle-bar" id="line-container1">
+												<div class="progressbar-text" id="progress-text1">0</div>
+											</div>
+											<h5>Photoshop</h5>
+										</div>
+										<div class="col-xs-4 center-align">
+											<div class="circle-bar" id="line-container2">
+												<div class="progressbar-text" id="progress-text2">0</div>
+											</div>
+											<h5>Illustrator</h5>
+										</div>
+										<div class="col-xs-4 center-align">
+											<div class="circle-bar" id="line-container3">
+												<div class="progressbar-text" id="progress-text3">0</div>
+											</div>
+											<h5>After effect</h5>
+										</div>
+									</div>
+								</div><!--SKILLS WITH CIRCLE DISPLAY ENDS-->
+							</div><!--RESUME FIRST TAB/SKILL TAB DETAILS ENDS-->
+							
+							<!--RESUME SECOND TAB/EDUCATION TAB DETAILS-->
+							<div id='tab-2'>
+								<h3 class="title">EDUCATIONS</h3>
+								<ul class="education-class">
+									<li>
+										<!--EDUCATION LIST ITEM-->
+										<h4 class="title">MSc in Computer Sciene<i class="fa fa-sort-desc pull-right"></i></h4>
+										<div class="list-content">
+											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+										</div>
+									</li>
+									<li>
+										<!--EDUCATION LIST ITEM-->
+										<h4 class="title">Grad At Computer Engineering<i class="fa fa-sort-desc pull-right"></i></h4>
+										<div class="list-content current">
+											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+										</div>
+									</li>
+									<li>
+										<!--EDUCATION LIST ITEM-->
+										<h4 class="title">College<i class="fa fa-sort-desc pull-right"></i></h4>
+										<div class="list-content">
+											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+										</div>
+									</li>
+									<li>
+										<!--EDUCATION LIST ITEM-->
+										<h4 class="title">Schools<i class="fa fa-sort-desc pull-right"></i></h4>
+										<div class="list-content">
+											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+										</div>
+									</li>
+								</ul>
+							</div><!--RESUME SECOND TAB/EDUCATION TAB DETAILS ENDS-->
+							<!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->
+							<div id='tab-3'>
+								<h3 class="title">EMPLOYMENT</h3>
+								<ul class="employment-class tab-cont">
+									<li>
+										<!--EMPLOYMENT INDIVIDUAL LIST-->
+										<h4>Manager <span class="year">2014 - 2005</span></h4>
+										<h5>Consectetur adipiscing</h5>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+									</li>
+									<li>
+										<!--EMPLOYMENT INDIVIDUAL LIST-->
+										<h4>Manager <span class="year">2014 - 2005</span></h4>
+										<h5>Consectetur adipiscing</h5>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+									</li>
+									<li>
+										<!--EMPLOYMENT INDIVIDUAL LIST-->
+										<h4>Manager <span class="year">2014 - 2005</span></h4>
+										<h5>Consectetur adipiscing</h5>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+									</li>
+								</ul>
+							</div><!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->
+						</div>
 					</div>
-				</div>
-				<div data-src="images/slide-5.jpg" class="w3layouts agileits">
-					<div class="camera_caption w3layouts agileits fadeFromBottom">
-						<h3 class="w3layouts agileits">Check Out My <a class="scroll" href="#portfolio">Portfolio</a> Below</h3>
+				</li>
+				<!--/#resume-->
+				<!--PORTFOLIO PAGE-->
+				<li id="portfolio" class="hidden">
+					<div class="title-container">
+						<div class="shadow-img"></div>
+						<h2 class="rotate-out rotated">Portfolio</h2> <!--PORTFOLIO TITLE-->                         
 					</div>
-				</div>
-			</div>
-		</div>
-		<!-- //Slider -->
 
-	</div>
-	<!-- //Header -->
-
-
-
-	<!-- About -->
-	<div class="agileaboutaitsabout" id="agileaboutaitsabout">
-		<div class="agileaboutaits">
-			<div class="container">
-
-				<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-info">
-					<h1>About Me</h1>
-					<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation lamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
-					<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">READ MORE<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
-				</div>
-
-				<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-image">
-					<div class="agileaboutaits-image-1">
-						<img src="images/about-1.jpg" alt="Couture">
+					<!--PORTFOLIO CATEGORY LIST-->    
+					<div class="abs-child">
+						<ul class="button-group filters-button-group">
+							<li class="button is-checked" data-filter="*">Show All</li>
+							<li class="button" data-filter=".photography">Photography</li>
+							<li class="button" data-filter=".commercial">Commercial</li>
+							<li class="button" data-filter=".potrait">Potrait</li>
+						</ul><!--/.button-group filters-button-group-->
 					</div>
-					<div class="agileaboutaits-image-2">
-						<img src="images/about-2.jpg" alt="Couture">
+					
+					<div class ="sec-porfolio description"> 
+						<div class="row">
+							<!--PORTFOLIO ITEM CONTAINER-->
+							<div class="folio-container">
+								<ul class="folio-item"><!--PORTFOLIO INDIVIDAUAL ITEM-->
+									<li class="view view-first photography">  
+										<img src="images/folio/logs.jpg" alt="logs" /><!--PORTFOLIO INDIVIDAUAL ITEM IMAGE--> 
+										<div class="mask">  
+											 <h2>woodsman</h2> <!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                               
+											<!-- Button trigger modal -->
+											<a role="button" class="info" data-toggle="modal" data-target="#myModal">Read More</a><!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+										 </div>  
+									</li>  
+									<li class="view view-second commercial"><!--PORTFOLIO INDIVIDAUAL ITEM-->
+									  <img src="images/folio/book.jpg" alt="book" /><!--PORTFOLIO INDIVIDAUAL ITEM IMAGE--> 
+										<div class="mask"></div>
+										<div class="content">
+											<h2>Hover Style #2</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                                  
+											<a role="button" class="info" data-toggle="modal" data-target="#myModal2">Read More</a><!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+										</div>
+									</li>
+									<li class="view view-tenth photography"> <!--PORTFOLIO INDIVIDAUAL ITEM--> 
+										 <img src="images/folio/beach.jpg" alt="beach" /> <!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->  
+										 <div class="mask">  
+											 <h2>New York</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                                    
+											 <a role="button" class="info" data-toggle="modal" data-target="#myModal5">Read More</a>  <!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+										 </div>  
+									</li>                         
+									<li class="view view-second commercial"><!--PORTFOLIO INDIVIDAUAL ITEM-->
+									  <img src="images/folio/guy.jpg" alt="guy" /><!--PORTFOLIO INDIVIDAUAL ITEM IMAGE--> 
+										<div class="mask"></div>
+										<div class="content">
+											<h2>Image Name</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                                 
+											<a role="button" class="info" data-toggle="modal" data-target="#myModal3">Read More</a><!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+										</div>
+									</li> 
+														
+									<li class="view view-first potrait"><!--PORTFOLIO INDIVIDAUAL ITEM-->  
+										 <img src="images/folio/illustration.jpg" alt="illustration" /><!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->   
+										 <div class="mask">  
+											 <h2>New York</h2>                                   
+											 <a role="button" class="info" data-toggle="modal" data-target="#myModal4">Read More</a> <!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'--> 
+										 </div>  
+									</li>                         
+									<li class="view view-second photography"><!--PORTFOLIO INDIVIDAUAL ITEM-->
+									  <img src="images/folio/guy.jpg" alt="guy" /><!--PORTFOLIO INDIVIDAUAL ITEM IMAGE--> 
+										<div class="mask"></div>
+										<div class="content">
+											<h2>Image Name</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                                 
+											<a role="button" class="info" data-toggle="modal" data-target="#myModal3">Read More</a><!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+										</div>
+									</li> 
+									<li class="view view-tenth potrait"> <!--PORTFOLIO INDIVIDAUAL ITEM--> 
+										<img src="images/folio/logs.jpg" alt="logs" /> <!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->  
+										<div class="mask">  
+											 <h2>woodsman</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                            
+											 <a role="button" class="info" data-toggle="modal" data-target="#myModal">Read More</a> <!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'--> 
+										 </div>  
+									</li>   
+									
+									<li class="view view-tenth commercial"><!--PORTFOLIO INDIVIDAUAL ITEM-->  
+										 <img src="images/folio/beach.jpg" alt="beach" /> <!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->  
+										 <div class="mask">  
+											 <h2>New York</h2><!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->                                    
+											 <a role="button" class="info" data-toggle="modal" data-target="#myModal5">Read More</a> <!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'--> 
+										 </div>  
+									</li>             
+																							
+											  
+								</ul>
+							</div>
+							<!--PORTFOLIO ITEM CONTAINER ENDS-->
+						</div>                          
 					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
+				</li><!--/#portfolio-->
 
-				<!-- Tooltip -->
-				<div class="tooltip-content">
-
-					<div class="modal fade features-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-dialog modal-lg">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h4 class="modal-title">Rachel Weisz</h4>
-								</div>
-								<div class="modal-body">
-									<img src="images/about-1.jpg" alt="Hitech Info">
-									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+				<!--CONTACT PAGE-->
+				<li id="contact" class="hidden">
+					<div class="title-container" >
+						<div class="shadow-img"></div>               
+					   <h2 class="rotate-out rotated">Contact</h2><!--CONTACT PAGE TITLE-->
+					</div>
+					<div class="description">                           
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="map-container">
+									<div id="map" style="width:100%;height:325px;"></div><!--GOOGLE MAP-->
 								</div>
 							</div>
+
+							<div class="col-sm-5">
+								<!--CONTACT DESCRIPTION-->
+								<h3 class="title">Contact Info</h3>
+								<h6 class="sm-title"><span class="address-icon"><i class="fa fa-map-marker"></i></span>311B, Jalalabad, Sylhet</h6>
+								<h6 class="sm-title"><span class="address-icon"><i class="fa fa-phone"></i></span>+8801979791001</h6>
+								<h6 class="sm-title"><span class="address-icon"><i class="fa fa-envelope"></i></span>nurealamsabbir@authlab.io</h6>
+								<!--/CONTACT DESCRIPTION ENDS-->
+							</div>
+							<div class="col-sm-7">
+
+								<div class="mail-container">
+									<div class="cnmail result">
+										<div class="msg success-msg"><i class="icon svg-check"><!--?xml version="1.0" encoding="utf-8"?-->  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"> <path d="M16 2.688c-7.375 0-13.313 5.938-13.313 13.313s5.938 13.313 13.313 13.313c7.375 0 13.313-5.938 13.313-13.313s-5.938-13.313-13.313-13.313zM16 28.25c-6.75 0-12.25-5.5-12.25-12.25s5.5-12.25 12.25-12.25c6.75 0 12.25 5.5 12.25 12.25s-5.5 12.25-12.25 12.25zM22.688 11.25l-8.563 8.313-3-3c-0.313-0.313-0.813-0.313-1.125 0s-0.313 0.813 0 1.125l3.563 3.563c0.125 0.125 0.313 0.188 0.563 0.188 0.188 0 0.375-0.063 0.5-0.188l9.125-8.875c0.375-0.313 0.375-0.813 0.063-1.125s-0.813-0.313-1.125 0z"></path> </svg> </i><span> You email has been stored!</span></div>
+										<div class="msg error-msg"><i class="icon svg-close-circle"><!--?xml version="1.0" encoding="utf-8"?-->  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"> <path d="M6.563 6.563c-5.188 5.188-5.188 13.688 0 18.875s13.688 5.188 18.875 0c5.188-5.188 5.188-13.625 0-18.875-5.188-5.188-13.625-5.188-18.875 0zM24.688 24.688c-4.813 4.75-12.563 4.75-17.375 0-4.75-4.813-4.75-12.563 0-17.375 4.813-4.75 12.563-4.75 17.375 0 4.75 4.813 4.75 12.563 0 17.375zM10.75 10l-0.813 0.75 5.313 5.25-5.25 5.25 0.75 0.75 5.25-5.25 5.25 5.25 0.75-0.75-5.25-5.25 5.313-5.25-0.813-0.75-5.25 5.25z"></path> </svg> </i><span> Sorry! Something went wrong!</span></div>
+									</div>
+									<h3 class="title invert">Don't Forget To Mail Me</h3>
+									<!--CONTACT FORM-->
+									<form action="sendmail.php" class="form-horizontal" id="contact-form">
+										<div class="form-group">
+											<input name="name" class="form-control required" placeholder="Name" data-placement="top" type="text">
+										</div>                                    
+										<div class="form-group">
+											<input name="email" class="form-control email" placeholder="Email" type="text">
+										</div>                   
+										<div class="form-group">
+											<textarea name="message" class="form-control" placeholder="Message" rows="3"></textarea>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-success">SEND</button>
+										</div>
+
+									</form><!--/#contact-form-->
+								</div>                      
+								
+							</div>                          
+							
 						</div>
 					</div>
+				</li><!--/#contact-->
+			</ul> 
 
-				</div>
-				<!-- //Tooltip -->
-
-			</div>
-		</div>
+			<div class="row mobile-nav-container">
+				<!--SOCIAL NAV FOR MOBILE-->
+				<ul class="mobile-social no-padding">
+					<li>Connect With Me</li>
+					<li><a href=""><i class="fa fa-facebook"></i></a></li>
+					<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+					<li><a href=""><i class="fa fa-youtube"></i></a></li>
+					<li><a href=""><i class="fa fa-pinterest-p"></i></a></li>
+					<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+				</ul><!--/.mobile-social-->
+			</div>               
+		</div><!--/.page-segment -->
+		<!--  <h6 class="copyright-text">Copyright © 2015 John Doe</h6> --> <!--if anyone wants copyright Texts--> 
 	</div>
-	<!-- //About -->
+</div><!--/.container -->
 
-
-
-	<!-- Speciality -->
-	<div class="w3threespecialityw3ls" id="w3threespecialityw3ls">
-		<div class="container">
-
-			<h2>What I Capture</h2>
-			<div class="grid cs-style-3">
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid1">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-1.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>FASHION</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid2">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-2.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>NATURE</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid3">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-3.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>WEDDING</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid4">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-4.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>TILT SHIFT</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid5">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-5.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>MONOCHROME</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid6">
-					<figure>
-						<div class="w3threespecialityw3ls-info">
-							<img src="images/special-6.jpg" alt="Couture">
-						</div>
-						<figcaption>
-							<h3>DOUBLE EXPOSURE</h3>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="clearfix"></div>
+<!--PORTFOLIO IMAGE MODAL LIST-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4><!--PORTFOLIO IMAGE TITLE-->
 			</div>
-			<div class="clearfix"></div>
-
-		</div>
-	</div>
-	<!-- //Speciality -->
-
-	<!-- Progressive-Effects -->
-	<div class="progressive-effects" id="skills">
-		<div class="container">
-
-			<!-- Skills -->
-			<div id="about-us" class="parallax">
-				<h3>Skills</h3>
-
-				<div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-						<p class="lead">Photography</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuetransitiongoal="90">90%</div>
-						</div>
-					</div>
-					<div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="400ms">
-						<p class="lead">Editing</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuetransitiongoal="80">80%</div>
-						</div>
-					</div>
-					<div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-						<p class="lead">Direction</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuetransitiongoal="85">85%</div>
-						</div>
-					</div>
-					<div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-						<p class="lead">Quality</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuetransitiongoal="95">95%</div>
-						</div>
-					</div>
-				</div>
+			<div class="modal-body">
+				<img src="images/folio/logs.jpg" class="img-responsive" alt="modal-image"><!--PORTFOLIO MODAL IMAGE-->
 			</div>
-			<!-- //Skills -->
-
-			<!-- Stats -->
-			<div class="stats">
-				<h3>Stats</h3>
-
-				<div class="stats-info">
-					<div class="col-md-3 col-sm-3 stats-grid stats-grid-1">
-						<div class="stats-img">
-							<img src="images/s1.png" alt="Corsa Racer">
-						</div>
-						<div class='numscroller counter numscroller-big-bottom' data-slno='1' data-min='0' data-max='7000' data-delay='.5' data-increment=4>7000</div>
-						<p>Happy Clients</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid stats-grid-2">
-						<div class="stats-img">
-							<img src="images/s2.png" alt="Corsa Racer">
-						</div>
-						<div class='numscroller counter numscroller-big-bottom' data-slno='1' data-min='0' data-max='170' data-delay='8' data-increment="1">170</div>
-						<p>Projects</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid stats-grid-3">
-						<div class="stats-img">
-							<img src="images/s3.png" alt="Corsa Racer">
-						</div>
-						<div class='numscroller counter numscroller-big-bottom' data-slno='1' data-min='0' data-max='19000' data-delay='.5' data-increment="11">19000</div>
-						<p>Followers</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid stats-grid-4">
-						<div class="stats-img">
-							<img src="images/s4.png" alt="Corsa Racer">
-						</div>
-						<div class='numscroller counter numscroller-big-bottom' data-slno='1' data-min='0' data-max='169' data-delay='8' data-increment="1">169</div>
-						<p>Awards</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
+			<div class="modal-footer">
+				<div class="mf-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis temporibus fuga sit explicabo blanditiis voluptate iste vero quia impedit? Iusto illo voluptas est praesentium veritatis magni, pariatur laboriosam voluptatem inventore.</p>
+				</div>                      
 			</div>
-			<!-- //Stats -->
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-		</div>
-	</div>
-	<!-- //Progressive-Effects -->
-
-
-
-	<!-- Portfolio -->
-	<div class="portfolio" id="portfolio">
-		<h3>Portfolio</h3>
-
-		<div class="tabs tabs-style-bar">
-			<nav>
-				<ul>
-					<li><a href="#section-bar-1" class="icon icon-box"><span>FASHION</span></a></li>
-					<li><a href="#section-bar-2" class="icon icon-display"><span>EVENTS</span></a></li>
-					<li><a href="#section-bar-3" class="icon icon-upload"><span>NATURE</span></a></li>
-					<li><a href="#section-bar-4" class="icon icon-tools"><span>MODELS</span></a></li>
-				</ul>
-			</nav>
-
-			<div class="content-wrap">
-
-				<!-- Tab-1 -->
-				<section id="section-bar-1" class="agileits w3layouts">
-					<h4>FASHION</h4>
-					<div class="gallery-grids">
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-1.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-1.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-2.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-2.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-3.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-3.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-4.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-4.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-5.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-5.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-6.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-6.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-7.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-7.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-8.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-8.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/fashion-9.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/fashion-9.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
-				<!-- //Tab-1 -->
-
-				<!-- Tab-2 -->
-				<section id="section-bar-2" class="agileits w3layouts">
-					<h4>EVENTS</h4>
-					<div class="gallery-grids">
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-1.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-1.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-2.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-2.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-3.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-3.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-4.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-4.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-5.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-5.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-6.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-6.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-7.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-7.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-8.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-8.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/event-9.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/event-9.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
-				<!-- //Tab-2 -->
-
-				<!-- Tab-3 -->
-				<section id="section-bar-3" class="agileits w3layouts">
-					<h4>NATURE</h4>
-					<div class="gallery-grids">
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-1.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-1.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-2.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-2.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-3.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-3.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-4.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-4.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-5.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-5.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-								<a href="images/nature-6.jpg" class="swipebox">
-									<figure class="effect-bubba">
-										<img src="images/nature-6.jpg" alt="" class="img-responsive">
-										<figcaption>
-											<h4>Photography</h4>
-										</figcaption>
-									</figure>
-								</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-7.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-7.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-8.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-8.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/nature-9.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/nature-9.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
-				<!-- //Tab-3 -->
-
-				<!-- Tab-4 -->
-				<section id="section-bar-4" class="agileits w3layouts">
-					<h4>MODELS</h4>
-					<div class="gallery-grids">
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-1.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-1.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-2.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-2.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-3.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-3.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-4.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-4.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-5.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-5.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-6.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-6.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-7.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-7.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-8.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-8.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="col-md-4 col-sm-4 gallery-top">
-							<a href="images/model-9.jpg" class="swipebox">
-								<figure class="effect-bubba">
-									<img src="images/model-9.jpg" alt="" class="img-responsive">
-									<figcaption>
-										<h4>Photography</h4>
-									</figcaption>
-								</figure>
-							</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
-				<!-- //Tab-4 -->
-				
-			</div><!-- //Content -->
-		</div><!-- //Tabs -->
-	</div>
-	<!-- //Portfolio -->
-
-
-
-	<!-- Map -->
-		<div id="map"></div>
-	<!-- //Map -->
-
-
-
-	<!-- Booking -->
-	<div class="w3layoutsbooking" id="contact">
-		<div class="container">
-
-			<h3>Book Your Project</h3>
-
-			<div class="booking-form-aits">
-				<form action="#" method="post">
-					<input type="text" class="margin-right" Name="Name" placeholder="NAME" required="">
-					<input type="email" Name="Email" placeholder="EMAIL" required="">
-					<input type="text" class="margin-right" Name="Phone Number" placeholder="PHONE NUMBER" required="">
-					<input type="text" Name="Place" placeholder="PLACE" required="">
-					<textarea name="Message" placeholder="PROJECT DETAILS" required=""></textarea>
-					<div class="send-button agileits w3layouts">
-						<button class="btn btn-primary">SEND MESSAGE<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
-					</div>
-				</form>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel2">Hover Style</h4><!--PORTFOLIO IMAGE TITLE-->
 			</div>
-
-		</div>
-	</div>
-	<!-- //Booking -->
-
-
-
-	<!-- Footer -->
-	<div class="footer">
-		<div class="container">
-
-			<h3>Drop Me a Line</h3>
-			<h5>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequateu fugiat nulla pariatur.</h5>
-
-			<div class="footer-grids">
-
-				<div class="col-md-3 col-sm-3 footer-grid footer-grid-1 address">
-					<h4>Address</h4>
-					<address>
-						<ul>
-							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Parma Via Modena</li>
-							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 40019</li>
-							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Sant'Agata Bolognese</li>
-							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> BO, Italy</li>
-						</ul>
-					</address>
-				</div>
-
-				<div class="col-md-2 col-sm-2 footer-grid footer-grid-2 phone">
-					<h4>Phone</h4>
-					<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +1 (734) 123-4567</p>
-					<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +1 (739) 648-7114</p>
-				</div>
-
-				<div class="col-md-2 col-sm-2 footer-grid footer-grid-3 email">
-					<h4>Email</h4>
-					<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:mail@example.com"> info@example.com</a></p>
-					<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:mail@example.com"> info@photos.com</a></p>
-				</div>
-
-				<!-- Newsletter -->
-				<div class="col-md-5 col-sm-5 footer-grid footer-grid-4 newsletter">
-					<h4>Newsletter</h4>
-					<form action="#" method="post">
-						<input type="text" placeholder="Email" name="Email" required="">
-						<input type="submit" value="SUBSCRIBE">
-					</form>
-				</div>
-				<!-- //Newsletter -->
-				<div class="clearfix"></div>
-				
+			<div class="modal-body">
+				<img src="images/folio/book.jpg" class="img-responsive" alt="modal-image"><!--PORTFOLIO MODAL IMAGE-->
 			</div>
-
-			<!-- Copyright -->
-			<div class="copyright">
-				<p>&copy; 2017 Photographer Portfolio. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank"> W3layouts </a><a href="#agilehomewthree" class="to-top scroll" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a></p>
+			<div class="modal-footer">
+				<div class="mf-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel sapiente, odit, illo saepe voluptate eos enim eius autem cumque ab, soluta dolor tempore inventore eligendi maxime voluptas pariatur explicabo blanditiis?</p>
+				</div>                      
 			</div>
-			<!-- //Copyright -->
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-		</div>
-	</div>
-	<!-- //Footer -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel3">Hover Style</h4><!--PORTFOLIO IMAGE TITLE-->
+			</div>
+			<div class="modal-body">
+				<img src="images/folio/guy.jpg" class="img-responsive" alt="modal-image"><!--PORTFOLIO MODAL IMAGE-->
+			</div>
+			<div class="modal-footer">
+				<div class="mf-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione quae, alias at. Reprehenderit, ut quis corporis laudantium, laborum sed omnis qui perspiciatis explicabo. Ipsum culpa aspernatur dolorem. Amet, quis.</p>
+				</div>                      
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel4">Hover Style</h4><!--PORTFOLIO IMAGE TITLE-->
+			</div>
+			<div class="modal-body">
+				<img src="images/folio/illustration.jpg" class="img-responsive" alt="modal-image"><!--PORTFOLIO MODAL IMAGE-->
+			</div>
+			<div class="modal-footer">
+				<div class="mf-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ab id unde veniam error et iste ut aspernatur accusantium porro molestiae voluptatibus rem, tempore inventore ad minus soluta praesentium magni?</p>
+				</div>                      
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel5">Hover Style</h4><!--PORTFOLIO IMAGE TITLE-->
+			</div>
+			<div class="modal-body">
+				<img src="images/folio/beach.jpg" class="img-responsive" alt="modal-image"><!--PORTFOLIO MODAL IMAGE-->
+			</div>
+			<div class="modal-footer">
+				<div class="mf-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam amet placeat porro, maxime corrupti laboriosam, quod nulla perferendis esse ipsa atque deleniti. Magni molestias, nemo illum eos, exercitationem neque incidunt.</p>
+				</div>                      
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-	<!-- Custom-JavaScript-File-Links -->
+<div class="modal fade" id="subscribe_modal_1" tabindex="-1" role="dialog" aria-labelledby="subscribe_modal_1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title">Thank You</h2><!--PORTFOLIO IMAGE TITLE-->
+			</div>
+			<div class="modal-body">
+				<div class="text-center mail-sucsess"><h3> <span>your mail has been sent</span></h3></div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-		<!-- Default-JavaScript -->   <script type="text/javascript" src="js/jquery.min.js"></script>
-		<!-- Bootstrap-JavaScript --> <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-		<!-- Slider-JavaScript-Files -->
-			<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-			<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
-			<script type="text/javascript" src="js/camera.js"></script>
-			<script>
-				jQuery(function(){
-					jQuery('#camera_wrap_2').camera({
-						loader: 'bar',
-						speed: 1000,
-						pagination: false,
-						thumbnails: false,
-					});
-				});
-			</script>
-		<!-- //Slider-JavaScript-Files -->
-
-		<!-- Navigation-JavaScript -->
-			<script src="js/nav.js"></script>
-		<!-- //Navigation-JavaScript -->
-
-		<!-- Progressive-Effects-Animation-JavaScript -->
-			<script type="text/javascript" src="js/jquery.inview.min.js"></script>
-			<script type="text/javascript" src="js/wow.min.js"></script>
-			<script type="text/javascript" src="js/mousescroll.js"></script>
-			<script type="text/javascript" src="js/main.js"></script>
-		<!-- //Progressive-Effects-Animation-JavaScript -->
-
-		<!-- Stats-Number-Scroller-Animation-JavaScript -->
-			<script src="js/waypoints.min.js"></script> 
-			<script src="js/counterup.min.js"></script> 
-			<script>
-				jQuery(document).ready(function( $ ) {
-					$('.counter').counterUp({
-						delay: 10,
-						time: 1000
-					});
-				});
-			</script>
-		<!-- //Stats-Number-Scroller-Animation-JavaScript -->
-
-		<!-- Gallery-Tab-JavaScript -->
-			<script src="js/cbpFWTabs.js"></script>
-			<script>
-				(function() {
-					[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
-						new CBPFWTabs( el );
-					});
-				})();
-			</script>
-		<!-- //Gallery-Tab-JavaScript -->
-
-		<!-- Swipe-Box-JavaScript -->
-			<script src="js/jquery.swipebox.min.js"></script> 
-				<script type="text/javascript">
-					jQuery(function($) {
-						$(".swipebox").swipebox();
-					});
-			</script>
-		<!-- //Swipe-Box-JavaScript -->
-
-		<!-- Map-JavaScript -->
-			<!---<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>        
-			<script type="text/javascript">
-				google.maps.event.addDomListener(window, 'load', init);
-				function init() {
-					var mapOptions = {
-						zoom: 11,
-						center: new google.maps.LatLng(40.6700, -73.9400),
-						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-					};
-					var mapElement = document.getElementById('map');
-					var map = new google.maps.Map(mapElement, mapOptions);
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(40.6700, -73.9400),
-						map: map,
-					});
-				}
-			</script>--->
-		<!-- //Map-JavaScript -->
-
-		<!-- Smooth-Scrolling-JavaScript -->
-			<script type="text/javascript" src="js/move-top.js"></script>
-			<script type="text/javascript" src="js/easing.js"></script>
-			<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll, .navbar li a, .footer li a").click(function(event){
-							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-						});
-					});
-			</script>
-		<!-- //Smooth-Scrolling-JavaScript -->
-
-	<!-- //Custom-JavaScript-File-Links -->
-
-
-
+<!--javascript files
+=============================================================-->
+<script type="text/javascript" src="js/jQueryTween-aio-min.js"></script> <!-- JQUERY Tween Plugin -->
+<script type="text/javascript" src="js/jquery.tabslet.min.js"></script> <!-- JQUERY Tab plugin-->     
+<script type="text/javascript" src="js/progressbar.min.js"></script> <!-- JQUERY Progressbar Plugin-->
+<script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script> <!-- JQUERY Text Rotator-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- Bootstrap file-->
+<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyBPNkCVoBW_Jzl6x-hgGU6e7QW1QMwKles"></script>
+<script type="text/javascript" src='js/isotope.pkgd.min.js'></script>
+<script type="text/javascript" src="js/custom.js"></script>
 </body>
-<!-- //Body -->
-
-
-
 </html>
