@@ -1,4 +1,4 @@
-var ImageData　=　[
+ImageData = [
 
 "../imgs/1.jpg",
 "../imgs/10.jpg",
@@ -14,7 +14,6 @@ var ImageData　=　[
 "../imgs/9.jpg",
 "../imgs/IMG_0168.JPG",
 "../imgs/IMG_0177 (2).JPG",
-"../imgs/IMG_0214 (2).MOV",
 "../imgs/IMG_0241 (3).JPG",
 "../imgs/IMG_0334 (3).JPG",
 "../imgs/IMG_0370 (3)(1).JPG",
@@ -41,7 +40,6 @@ var ImageData　=　[
 "../imgs/IMG_0794.JPG",
 "../imgs/IMG_0814.JPG",
 "../imgs/IMG_0815.JPG",
-"../imgs/IMG_0816.JPG",
 "../imgs/IMG_0819.JPG",
 "../imgs/IMG_0820.JPG",
 "../imgs/IMG_0821.JPG",

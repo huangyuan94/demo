@@ -46,6 +46,7 @@ function findSync(startPath) {
 }
 let fileNames=findSync('./../imgs/').join('",\n"').replace(/\\/g,"/");
 console.log(fileNames);
+//ImageData
 
 fs.writeFile('json.js', fileNames, (err)=> {
    if (err) return console.error(err);
