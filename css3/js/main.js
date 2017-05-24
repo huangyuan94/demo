@@ -9,6 +9,22 @@
  * http://www.codrops.com
  */
 ;(function(window) {
+	var stringArray = [];
+	$.each(ImageData,function(i,item){
+		var str = 	'<div class="slide" data-content="content-'+ i +'">'+
+						'<div class="slide__mover">'+
+							'<div class="zoomer flex-center">'+
+								'<img class="zoomer__image" src="'+item+'" />'+
+							'</div>'+
+						'</div>'+
+						'<h2 class="slide__title"><span>Amazing</span>Best Life</h2>'+
+					'</div>';
+
+		//console.log(str);
+		stringArray.push(str);
+	});
+	console.log("共 "+ImageData.length+" 张照片");
+	$("#slider").append(stringArray.join(""));
 
 	'use strict';
 
