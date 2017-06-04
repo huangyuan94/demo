@@ -335,13 +335,13 @@ function GetSlideDirection(startX, startY, endX, endY) {
 
 	var angle = GetSlideAngle(dx, dy);  
 	if(angle >= -45 && angle < 45) {  
-		result = 4;  
+		result = 39;  
 	}else if (angle >= 45 && angle < 135) {  
-		result = 1;  
+		result = 38;  
 	}else if (angle >= -135 && angle < -45) {  
-		result = 2;  
+		result = 40;  
 	}else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {  
-		result = 3;  
+		result = 37;  
 	}  
 
 	return result;  
@@ -358,7 +358,16 @@ document.addEventListener('touchend',function (ev) {
 	var endX, endY;  
 	endX = ev.changedTouches[0].pageX;  
 	endY = ev.changedTouches[0].pageY;  
-	var direction = GetSlideDirection(startX, startY, endX, endY);  
+	var direction = GetSlideDirection(startX, startY, endX, endY);
+
+	var value = Math.abs(direction - Arrow);
+	//当蛇向右运动时，按下左键，不可以让蛇向左运动
+	//即按下的keyCode和当前运动方向Arrow的绝对值不等于2时，才可以改变方向
+	//等于2时，蛇头只能往前或者旁边，不能往后运动
+	if(value == 2){
+		return;
+	}
+
 	switch(direction) {  
 		case 0:  
 			//alert("没滑动");  
