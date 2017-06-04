@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<style>
+/*-- Reset-Code --*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-- //Reset-Code --*/
+
+
+
+
+.m-box{
+	width: 600px;
+	height: 600px;
+	margin: 90px auto;
+	border: 1px solid #ddd;
+	position: relative;
+	padding: 1px 0 0 1px;
+}
+
+.m-box ul > li,.snake > span{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    float: left;
+    margin: 0 1px 1px 0;
+    box-sizing: border-box;
+}
+
+.snake > span{
+	background-color: rgba(0, 150, 136, 0.76);
+	position: absolute;
+}
+
+.snake > span:first-child{
+	background-color: #CC00FF;
+}
+
+.on{
+	border-radius: 50%;
+	background-color: #4957bd;
+}
+</style>
+<body>
+	<div class="m-box" id="snakeBox">
+		<ul></ul>
+		<div class="snake">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var Arrow = 39;	//蛇运动的方向，全局变量 ArrowRight
+	var timer;
+	var log = console.log.bind(console);
+	window.onload = function(){
+		var snakeBox = document.getElementById("snakeBox");//最外层的盒子，用于判断蛇是否移动到了盒子外面（IsGameOver）
+		var snakeBoxStyle = {
+			"width"  : snakeBox.clientWidth, //盒子的宽高，IsGameOver函数会用到，蛇头的定位不能超过这个范围
+			"height" : snakeBox.clientHeight
+		}
+
+		//log(snakeBoxStyle)
+
+		var $li = "<li></li>";
+		var domList = [];
+		for (var i = 0; i < 1600; i++) {
+			domList.push( $li );
+		}
+
+		var $ul = document.querySelectorAll(".m-box ul")[0];//创建网格布局的ul元素
+		$ul.innerHTML = domList.join("");
+
+		function createFood(){
+			var food = document.getElementsByClassName("on");
+			if(food.length > 0){
+				document.getElementsByClassName("on")[0].className = "";
+			}
+			var random = ~~(Math.random() * 1600);
+			document.getElementsByTagName("li")[random].className = "on";
+		}
+
+		var defaultPosition = [{left:91,top:46},{left:76,top:46},{left:61,top:46},{left:46,top:46},{left:31,top:46}];
+		//蛇身span元素
+		function createSnake(){
+			var snakeSpan = document.querySelectorAll(".snake span");
+			for (var i = 0; i < defaultPosition.length; i++) {
+				var left = defaultPosition[i].left;
+				var top  = defaultPosition[i].top;
+				snakeSpan[i].style.left = left + "px";
+				snakeSpan[i].style.top  = top + "px";
+			}
+		}
+	
+
+
+		function move(){
+			//蛇身span元素外层的父元素
+			var snake = document.querySelectorAll(".snake")[0];
+			//每次移动前，蛇头的坐标点 todo：每次移动时，把蛇尾span元素移动到蛇头前面，再根据蛇移动方向，给这个span进行定位，连贯起来之后，蛇就动起来了
+			var firstStyle = {
+				left : Number(snake.firstElementChild.style.left.replace(/px/g,"")),
+				top  : Number(snake.firstElementChild.style.top.replace(/px/g,"")),
+			}
+			//console.log(firstStyle)
+			var isEatFoodFlag = isEatFood();
+			changeLength(snake , isEatFoodFlag);
+			//snake.insertBefore(snake.lastElementChild,snake.firstElementChild);
+
+			switch(Arrow){
+				case 38: 	//ArrowUp 上
+					snake.firstElementChild.style.left = firstStyle.left + 0 + "px";
+					snake.firstElementChild.style.top  = firstStyle.top - 15 + "px";
+				break;
+				case 40: 	//ArrowDown 下
+					snake.firstElementChild.style.left = firstStyle.left + 0 + "px";
+					snake.firstElementChild.style.top  = firstStyle.top + 15 + "px";
+				break;
+				case 37: 	//ArrowLeft 左
+					snake.firstElementChild.style.left = firstStyle.left - 15 + "px";
+					snake.firstElementChild.style.top  = firstStyle.top + 0 + "px";
+				break;
+				case 39: 	//ArrowRight 右
+					snake.firstElementChild.style.left = firstStyle.left + 15 + "px";
+					snake.firstElementChild.style.top  = firstStyle.top + 0 + "px";
+				break;
+				default: 	//默认右
+					snake.firstElementChild.style.left = firstStyle.left + 15 + "px";
+					snake.firstElementChild.style.top  = firstStyle.top + 0 + "px";
+			}
+			var IsGameOverFlag = IsGameOver();
+			isEatSelf();//是不是吃到了自己
+			//log("IsGameOverFlag = ",IsGameOverFlag);
+
+		}
+
+		//控制移动的方向
+		//通过全局变量Arrow来维护蛇移动的方向
+		var _keyCode = [37,38,39,40];
+		window.onkeydown = function(e){
+			//console.log(e.key,e.keyCode);
+			//当用户按下的不是上，下，左，右键时，不做处理，默认朝原方向运动
+			if(_keyCode.indexOf(e.keyCode) > -1){
+				var value = Math.abs(e.keyCode - Arrow);
+				//当蛇向右运动时，按下左键，不可以让蛇向左运动
+				//即按下的keyCode和当前运动方向Arrow的绝对值不等于2时，才可以改变方向
+				if(value != 2){
+					Arrow = e.keyCode;
+				}
+			}
+		}
+
+		//是不是吃到了食物
+		function isEatFood(){
+			var food = document.getElementsByClassName("on")[0];
+			var foodWidth  = food.offsetWidth + 1;
+			var foodHeight = food.offsetHeight + 1;
+			var offset = {
+				"minLeft" : food.offsetLeft,
+				"maxLeft" : food.offsetLeft + foodWidth,
+				"minTop"  : food.offsetTop,
+				"maxTop"  : food.offsetTop + foodHeight
+			};
+
+			var snake = document.querySelectorAll(".snake")[0];
+			var firstStyle = {
+				left : Number(snake.firstElementChild.style.left.replace(/px/g,"")),
+				top  : Number(snake.firstElementChild.style.top.replace(/px/g,"")),
+			}
+			//debugger;
+			if(firstStyle.left >= offset.minLeft && firstStyle.left < offset.maxLeft && firstStyle.top >= offset.minTop && firstStyle.top < offset.maxTop ){
+				log("吃到了食物");
+				createFood();
+				return true;
+			}
+			return false;
+		}
+
+		//是不是吃到了自己的身体（GameOver）
+		function isEatSelf(){
+			var self = [];
+			//蛇身span元素
+			var snakeSpan = document.querySelectorAll(".snake span");
+
+			var snake = document.querySelectorAll(".snake")[0];
+			var firstStyle = {
+				left : Number(snake.firstElementChild.style.left.replace(/px/g,"")),
+				top  : Number(snake.firstElementChild.style.top.replace(/px/g,"")),
+			}
+
+			var w = snakeSpan[0].offsetWidth + 1;
+			var h = snakeSpan[0].offsetHeight + 1;
+			for (var i = 1; i < snakeSpan.length; i++) {
+				var minLeft = snakeSpan[i].offsetLeft;
+				var maxLeft = snakeSpan[i].offsetLeft + w;
+				var minTop = snakeSpan[i].offsetTop;
+				var maxTop = snakeSpan[i].offsetTop + h;
+				if(firstStyle.left >= minLeft && firstStyle.left < maxLeft && firstStyle.top >= minTop && firstStyle.top < maxTop ){
+					log("吃到了自己");
+					clearTimer();//停止游戏
+					break;
+			}
+				
+			}
+
+		}
+
+		function IsGameOver(){
+			var snake = document.querySelectorAll(".snake")[0];
+			var firstStyle = {
+				left : Number(snake.firstElementChild.style.left.replace(/px/g,"")),
+				top  : Number(snake.firstElementChild.style.top.replace(/px/g,"")),
+			}
+
+			//debugger;
+			if(firstStyle.left < 0 || firstStyle.left >= snakeBoxStyle.width ){
+				clearTimer()
+				return true;
+			}
+
+			if(firstStyle.top < 0 || firstStyle.top >= snakeBoxStyle.height ){
+				clearTimer()
+				return true;
+			}
+			return false;
+		}
+
+		//变长
+		function changeLength(snake , flag){
+			if(flag){
+				var span = document.createElement("span");
+				//span.textContent =  ~~(Math.random() * 10);
+				snake.insertBefore(span,snake.firstElementChild);
+			}else{
+				//snake.lastElementChild.remove();
+				snake.insertBefore(snake.lastElementChild,snake.firstElementChild);
+			}
+		}
+
+		//清除定时器，停止移动，游戏结束
+		function clearTimer(){
+			if(timer){
+				clearInterval(timer);
+				if(confirm("Game Over")){
+			 		console.log("重新开始")
+			 		reset();
+				}
+			};
+		}
+
+		//重置函数
+		function reset(){
+			createSnake();//生成蛇身
+			createFood();//随机生成食物
+			timer = window.setInterval( move ,150);
+			Arrow = 39
+		}
+
+		//页面初始化init
+		(function(){
+			reset();
+		})();
+		
+	}
+</script>
+</html>
