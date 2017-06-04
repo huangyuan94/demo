@@ -91,14 +91,10 @@ table {
 <body>
 	<div class="m-box" id="snakeBox">
 		<ul></ul>
-		<div class="snake">
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
+		<div class="snake"></div>
 	</div>
+	<!-- <embed src="Music-4322110.mp3" autostart="true" loop="true"></embed> -->
+	<audio src="Music-4322110.mp3" autoplay="true" loop="true" hidden="true"></audio>
 </body>
 <script type="text/javascript">
 	var Arrow = 39;	//蛇运动的方向，全局变量 ArrowRight
@@ -131,9 +127,11 @@ table {
 			document.getElementsByTagName("li")[random].className = "on";
 		}
 
+		var snakeHtml = "<span></span><span></span><span></span><span></span><span></span>";//初始化5个span元素，组成蛇的身体
 		var defaultPosition = [{left:91,top:46},{left:76,top:46},{left:61,top:46},{left:46,top:46},{left:31,top:46}];
 		//蛇身span元素
 		function createSnake(){
+			document.querySelectorAll(".snake")[0].innerHTML = snakeHtml;
 			var snakeSpan = document.querySelectorAll(".snake span");
 			for (var i = 0; i < defaultPosition.length; i++) {
 				var left = defaultPosition[i].left;
