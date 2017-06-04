@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
 	<title>index</title>
 </head>
 <style>
@@ -341,7 +345,7 @@ function GetSlideDirection(startX, startY, endX, endY) {
 	}else if (angle >= -135 && angle < -45) {  
 		result = 40;  
 	}else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {  
-		result = 37;  
+		result = 37; 
 	}  
 
 	return result;  
@@ -372,19 +376,19 @@ document.addEventListener('touchend',function (ev) {
 		case 0:  
 			//alert("没滑动");  
 		break;  
-		case 1:  
+		case 38:  
 			//alert("向上");
 			Arrow = 38;
 		break;  
-		case 2:  
+		case 40:  
 			//alert("向下");
 			Arrow = 40;
 			break;  
-		case 3:  
+		case 37:  
 			//alert("向左");
 			Arrow = 37;
 			break;  
-		case 4:  
+		case 39:  
 			//alert("向右");
 			Arrow = 39;
 			break;  
