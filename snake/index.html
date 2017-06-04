@@ -303,7 +303,7 @@ table {
 		function reset(){
 			createSnake();//生成蛇身
 			createFood();//随机生成食物
-			timer = window.setInterval( move ,150);
+		//	timer = window.setInterval( move ,150);
 			Arrow = 39
 		}
 
@@ -312,6 +312,10 @@ table {
 			reset();
 		})();
 		
+		document.ontouchstart = function(e){
+			console.log(12)
+			alert(123)
+		}
 	}
 </script>
 </html>
