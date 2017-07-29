@@ -95,7 +95,7 @@ div#ipresenter div.step img {
 	-o-transform: translate(-50%, 0%);
 	-ms-transform: translate(-50%, 0%);
 	transform: translate(-50%, 0%);
-	height: 44px;
+	min-height: 44px;
 }
 
 .ipresenter-controlNav a {
@@ -119,7 +119,7 @@ div#ipresenter div.step img {
 .ipresenter-controlNav div.ipresenter-items {
 	float: left;
 	padding: 0px 10px 0px 10px;
-	height: 44px;
+	min-height: 44px;
 	background: url('../img/nav-bg.png');
 }
 
@@ -129,7 +129,7 @@ div#ipresenter div.step img {
 
 .ipresenter-controlNav div.ipresenter-items ul li {
 	float: left;
-	position: relative;
+	position: relative;height: 44px;
 }
 
 .ipresenter-controlNav a.ipresenter-control {

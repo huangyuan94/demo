@@ -12,11 +12,32 @@
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<link rel="stylesheet" href="css/demo2.css" />
+
+		<script src="../node/json.js"></script>
+
 		<script src="js/jquery-1.7.1.min.js"></script>
 
 		<script src="js/ipresenter.packed.js"></script>
 		<script>
 			$(document).ready(function(){
+				var stringArray = [];
+				var defalutVal = 0;
+				var step = 1500;
+				var array = [80,180,180,-180,180]
+				$.each(ImageData,function(i,item){
+
+					var str = 	'<div class="step" data-x="'+ defalutVal +'" data-y="0" data-thumbnail="'+ item +'">'+
+									'<img src="'+ item +'" />'+
+								'</div>'
+					defalutVal = defalutVal + step;
+					//console.log(str);
+					stringArray.push(str);
+				});
+				console.log("共 "+ImageData.length+" 张照片");
+				$("#ipresenter").append(stringArray.join(""));
+
+
+
 				$('#ipresenter').iPresenter({
 					animSpeed: 2000,
 					timer: '360Bar',
@@ -31,6 +52,64 @@
 		            controlNavNextPrev: true //是否显示“上一张”“下一张”导航   
 				});
 			});
+
+
+
+/*			data-pausetime – 幻灯片展现的时间;
+
+			data-x, data-y, data-z 在屏幕中3维变换;
+
+			data-rotate, data-rotate-x, data-rotate-y, data-rotate-z rotate 元素沿各轴的转动 (单位：度);
+
+			data-scale – 放大或缩小;
+
+			data-thumbnail – 缩略图;
+
+
+			$(document).ready(function(){
+		    $('#ipresenter').iPresenter({
+		        easing: 'ease-in-out', // 动画效果 (custom cubic-bezier function is acceptable)
+		        autoPlay: true, // 自动播放
+		        replay: true, // 循环播放
+		        animSpeed: 1000, // 动画时间 (Microsecond)
+		        pauseTime: 5000, // 展示时间 (Microsecond)
+		        directionNav: true, // 方向导航按钮
+		        directionNavHoverOpacity: 0.6, // 鼠标悬浮时透明度
+		        controlNav: true, // 1,2,3,4... 数字导航
+		        controlNavNextPrev: true, // 上下滑块导航
+		        controlNavHoverOpacity: 0.6, // 鼠标悬浮时透明度
+		        controlNavThumbs: false, // 显示缩略图
+		        controlNavTooltip: true, // 缩略图提示
+		        keyboardNav: true, // 激活键盘导航
+		        pauseOnHover: false, // 当鼠标滑过启用或禁用幻灯片
+		        itemsOpacity: 0.4, // 设置item的不透明度
+		        randomStart: false, // 随机显示
+		        startStep: 0, // 从第一滑块开始
+		        timer: 'Pie', // 计时器主题: "Pie", "360Bar" or "Bar"
+		        timerBg: '#000', // 计时器背景色
+		        timerColor: '#EEE', // 计时器颜色
+		        timerOpacity: 0.5, // T计时器透明透
+		        timerDiameter: 30, // 计时器直径
+		        timerPadding: 4, // 计时器内边距
+		        timerStroke: 3, // 计时器扫笔宽度
+		        timerBarStroke: 1, // 计时条宽度Timer Bar stroke width
+		        timerBarStrokeColor: '#EEE', // 计时条颜色
+		        timerBarStrokeStyle: 'solid', // 计时条风格Timer Bar stroke style
+		        timerPosition: 'top-right', // 计时器位置  (top,middle,bottom)-(left-center-right) set like: 'middle-center'
+		        nextLabel: "Next", // “下一个”按钮文字 (Multilanguage use)
+		        previousLabel: "Previous", // “上一个”按钮文字 (Multilanguage use)
+		        playLabel: "Play", // 播放按钮文字 (Multilanguage use)
+		        pauseLabel: "Pause", // 暂停按钮文字 (Multilanguage use)
+		        onBeforeChange: function(){}, // Triggers before a step change
+		        onAfterChange: function(){}, // Triggers after a step change
+		        onLastStep: function(){}, // Triggers when last step is shown
+		        onAfterLoad: function(){}, // Triggers when slider has loaded
+		        onPause: function(){}, // Triggers when slider has paused
+		        onPlay: function(){} // Triggers when slider has played
+		    });
+		});*/
+
+
 		</script>
 
 	</head>
