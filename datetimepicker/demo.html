@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="./bootstrap.css" rel="stylesheet" media="screen">
+    <link href="./bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div class="container">
+    <form action="" class="form-horizontal"  role="form">
+        <fieldset>
+            <legend>Test</legend>
+            <div class="form-group">
+                <label for="dtp_input1" class="col-md-2 control-label">DateTime Picking</label>  <!-- data-link-field="dtp_input1" -->
+                
+                <div class="input-group date form_datetime col-md-5">
+                    <input class="form-control" type="text" value="" readonly>
+                    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+				<!-- <input type="hidden" id="dtp_input1" value="" /><br/> -->
+            
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript" src="./jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+    //选择年月的
+    $('.form_datetime').datetimepicker({  
+        format : 'yyyy-mm',  //显示格式 yyyy年mm月
+        autoclose : true,  //日期选择完成后是否关闭选择框
+        // minView : 3,  //表示日期选择的最小范围，默认是hour
+        forceParse : false,  // 当选择器关闭的时候，是否强制解析输入框中的值。也就是说，当用户在输入框中输入了不正确的日期，选择器将会尽量解析输入的值，并将解析后的正确值按照给定的格式format设置到输入框中。默认true
+        todayBtn : true,
+        startView : 'year',
+        minView :'year',
+        language : 'zh-CN', //语言
+        startDate: new Date(),//给日期时间选择器设置起始日期。
+        pickerPosition : 'bottom-left', //定位 此选项当前只在组件实现中提供支持。通过设置选项可以讲选择器放倒输入框下方。
+    })
+
+    $('.form-control').on("change",function( e ){
+        console.log( $(e.target).val() )
+    });
+
+//没用的，不要的删掉
+
+//startView minView参数：
+// 0   从小时视图开始，选分
+// 1   从天视图开始，选小时
+// 2   从月视图开始，选天
+// 3   从年视图开始，选月
+// 4   从十年视图开始，选年
+
+//移除日期时间选择器。同时移除已经绑定的event、内部绑定的对象和HTML元素。
+//$('#datetimepicker').datetimepicker('remove');
+
+
+//显示日期时间选择器。
+//$('#datetimepicker').datetimepicker('show');
+
+
+//隐藏日期时间选择器。
+//$('#datetimepicker').datetimepicker('hide');
+
+//http://www.bootcss.com/p/bootstrap-datetimepicker/
+// http://blog.csdn.net/u012211233/article/details/51944191
+</script>
+</body>
+</html>
