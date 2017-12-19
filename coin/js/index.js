@@ -87,7 +87,16 @@ $(function(){
     	if(e.keyCode == "13"){  
 			dataFormat($(this));
 		}
-    });
+    }).poshytip({
+		className: 'tip-twitter',
+		showOn: 'focus',
+		alignTo: 'target',
+		alignX: 'inner-left',
+		// alignY: 'bottom',
+		offsetX: 0,
+		offsetY: 10,
+		showTimeout: 100
+	});
 
     function dataFormat(input){
     	var EOS = localStorage.getItem("EOS");
@@ -101,9 +110,15 @@ $(function(){
     			// lastDate: formatDateTime().split(" ")[0]
     		}
     	}
+    	var _length = EOS.time.length;
+    	if(_length > 0 && (new Date() - new Date(EOS.time[_length - 1])) < 3600000){
+    		console.log("小于一个小时！")
+    		return false;
+    	}
 		var value = EOS.value;
 		var time = EOS.time;
 		value.push(input.val());
+		input.val("");
 		time.push(formatDateTime());
 		option.series[0].data = value;
 		option.xAxis.data = time;
