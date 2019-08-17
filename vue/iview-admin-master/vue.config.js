@@ -12,9 +12,11 @@ const resolve = dir => {
 // 例如：https://www.foobar.com/my-app/
 // 需要将它改为'/my-app/'
 // iview-admin线上演示打包路径：https://file.iviewui.com/admin-dist/
+console.log('env', process.env.NODE_ENV, (process.env.NODE_ENV === 'production'));
 const BASE_URL = process.env.NODE_ENV === 'production'
-  ? '/dist/'
+  ? '/dist/'   ///demo/vue/iview-admin-master/dists/
   : '/dist/'
+console.log('BASE_URL', BASE_URL);
 
 module.exports = {
   // Project deployment base
