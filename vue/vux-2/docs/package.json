@@ -6,7 +6,7 @@
     "dev": "ream dev"
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "babel-plugin-component": "^1.1.0",
     "element-ui": "^2.3.4",
     "github-markdown-css": "^2.6.0",
