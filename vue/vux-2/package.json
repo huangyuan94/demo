@@ -53,7 +53,7 @@
     "object-assign": "^4.1.0",
     "qr.js": "0.0.0",
     "shake.js": "^1.2.2",
-    "validator": "^9.3.0",
+    "validator": "^13.7.0",
     "vanilla-masker": "^1.2.0",
     "vux-blazy": "^1.6.4",
     "vux-xscroll": "^3.1.10",
